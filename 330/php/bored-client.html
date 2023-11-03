@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<title>Are you bored?</title>
+		<script>
+			window.onload = ()=>{
+				
+				jokeBtn.onclick = (e)=>{
+					// 1. Clear UI
+					activity.innerHTML = "Fetching an activity now!";
+					type.innerHTML = "";
+					price.innerHTML = "";
+					
+					// 2. Create an XHR object to download the web service
+					// https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/
+					const xhr = new XMLHttpRequest();
+					const url = "https://www.boredapi.com/api/activity";
+					
+					// 3. set `onerror` handler
+					xhr.onerror = (e) => console.log("error");
+					
+					// 4. set `onload` handler
+					xhr.onload = (e) => {
+						const headers = e.target.getAllResponseHeaders();
+						const jsonString = e.target.response;
+						console.log(`headers = ${headers}`);
+						console.log(`jsonString = ${jsonString}`);
+						
+						// update the UI by showing the joke
+						const json = JSON.parse(jsonString);
+						activity.innerHTML = `Activity: <b>${json.activity}</b>`;
+						type.innerHTML = `Type: <b>${json.type}</b>`;
+						price.innerHTML = `Price: <b>${json.price}</b>`;
+					}; // end xhr.onload
+					
+					// 5. open the connection using the HTTP GET method
+					xhr.open("GET",url);
+					
+					// 6. we could send request headers here if we wanted to
+					// https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/setRequestHeader
+					
+					// 7. finally, send the request
+					xhr.send();
+					
+				}; // end onclick
+				
+			}; // end window.onload
+			
+		</script>
+	</head>
+	<body>
+		<h1>Are you bored?</h1>
+		<button id="jokeBtn">View a random activity</button>
+		<hr>
+		<p id="activity">Activity</p>
+		<p id="type">Type:</p>
+		<p id="price">Price:</p>
+	</body>
+</html>

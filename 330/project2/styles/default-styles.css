@@ -1,0 +1,49 @@
+/* .myheader grabbed from Bootstrap's jumbotron example - https://getbootstrap.com/docs/4.0/examples/jumbotron/ */
+
+* {
+	font-family: 'Noto Sans', sans-serif;
+}
+
+.myheader {
+	background-color: #e9ecef;
+	padding: 4rem 2rem;
+	margin-bottom: 2rem;
+}
+
+input.form-control {
+	display: inline-block;
+	width: 20rem;
+	margin-right: 1rem;
+}
+
+.search-row {
+	margin-bottom: 1rem;
+}
+
+#content {
+	word-wrap: break-word;
+}
+
+img {
+	margin-bottom: 10px;
+}
+
+/* https://stackoverflow.com/questions/38901166/horizontal-scrollable-divs-in-a-bootstrap-row */
+
+.videoList {
+	display: block;
+	overflow-x: scroll;
+	white-space: nowrap;
+}
+
+.videoThumbnail {
+	display: inline-block;
+}
+
+.vidComBtn {
+	padding: 10px;
+}
+
+#currentPageNum {
+	display: inline-block;
+}

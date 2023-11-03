@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Greeter</title>
+		<style>
+			*{font-size: 1.5em; font-family: 'Roboto Mono', monospace;}
+			
+			@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
+			
+			button{
+				width: 200px;
+				height: 50pt;
+				font-size: 20pt;
+				font-family: 'Roboto Mono', monospace;
+				background-color: white;
+				border-radius: 12px;
+				border-color: 2px solid #000000;
+				
+				transition-duration: 0.4s;
+			}
+			
+			button:hover{
+				background-color: #555555;
+				color: white;
+			}
+			
+			@media only screen and (max-width: 600px){
+				
+				body{
+					text-align: center;
+				}
+				
+			}
+		</style>
+		
+		<script>
+			'use strict';
+			
+			//window.onload = init;
+			window.addEventListener("load", init);
+			
+			function init(){
+
+				const buttons = document.querySelectorAll("button");  // get all of the buttons
+				for (const button of buttons) { // loop through the buttons
+					button.addEventListener('click', () => output(button.innerHTML)); // add an onclick event and call output
+				};
+				
+				function output(buttonName){ // takes the name of the button to use in the final string
+					//-----First Name-----
+					let fname = document.querySelector("#firstname").value;
+					fname = fname.trim().length == 0 ? "James" : fname;
+					
+					//-----Last Name-----
+					let lname = document.querySelector("#lastname").value;
+					lname = lname.trim().length == 0 ? "Bond" : lname;
+					
+					// Set output
+					document.querySelector("#output").innerHTML = `${buttonName} ${fname} ${lname}`;
+				}
+			}
+			
+			/*
+			function init(){
+				let button = document.querySelector("button");
+				button.onclick = sayHello;
+				
+				function sayHello(){
+					let name = document.querySelector("#firstname").value;
+					name = name.trim();
+//					if (name.length == 0)
+//					{
+//						name = "Mr. X";
+//					}
+					name = name.length == 0 ? "Mr.X" : name; // name = conditional ?(true) ___ :(else) ___
+					document.querySelector("#output").innerHTML = `Hello ${name}`;
+				}
+			} */
+		</script>
+	</head>
+	<body>
+		<button id="hello">Hello</button>
+		<button id="goodbye">Goodbye</button>
+		<input id="firstname" placeholder="First name">
+		<input id="lastname" placeholder="Last name">
+		<p id="output">???</p>
+	</body>
+</html>
