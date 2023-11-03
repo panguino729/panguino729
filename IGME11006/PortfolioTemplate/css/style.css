@@ -1,0 +1,101 @@
+/* Global tag affector*/
+
+* {
+    /* border: 1px solid red; */
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Style the body */
+
+body {
+    width: 100%;
+    background-color: white;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+/* Header/logo Title */
+
+.header {
+    padding: 60px;
+    text-align: center;
+    background: #1abc9c;
+    color: white;
+}
+
+/* Style the top navigation bar */
+
+.navbar {
+    background-color: white;
+    position: fixed;
+    /* Set the navbar to fixed position */
+    top: 0;
+    /* Position the navbar at the top of the page */
+    width: 100%;
+    /* Full width */
+    padding: 1em;
+}
+
+/* Style the navigation bar links */
+
+.navbar a {
+    color: black;
+    padding: 14px 20px;
+    text-decoration: none;
+    text-align: center;
+}
+
+/* Change color on hover */
+
+.navbar a:hover {
+    background-color: #131318;
+    color: white;
+}
+
+/* Column container */
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    padding-top: 2%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Main column */
+
+.main {
+    align-items: center;
+    background-color: white;
+    padding: 3em;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Portrait Image */
+
+.portrait {
+    padding: 2em;
+    border-radius: 50%;
+    max-width: 25%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Footer */
+
+.footer {
+    flex: none;
+    padding: 10px;
+    text-align: center;
+    background: white;
+}
+
+/* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
+
+@media screen and (max-width: 700px) {
+    .row, .navbar {
+        flex-direction: column;
+    }
+}
