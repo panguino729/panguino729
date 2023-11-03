@@ -1,0 +1,107 @@
+img {
+    width: auto;
+    height: 100%;
+    position: relative;
+}
+
+div#content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+div.result {
+    display: flex;
+    flex-wrap: wrap;
+    width: 300px;
+    height: 300px;
+    overflow: hidden;
+    margin: 10px;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+body {
+    font-family: 'Kalam', cursive;
+    background-color: #65c96a;
+}
+
+h1 {
+    text-align: center;
+    font-size: 4em;
+    font-family: 'Kaushan Script', cursive;
+    color: navy;
+}
+
+h2 {
+    text-align: center;
+    font-size: 2em;
+    font-family: 'Kaushan Script', cursive;
+}
+
+header {
+    background-image: url(../images/sky.jpg);
+    padding: 2px;
+    border-top: 3px solid blue;
+    border-right: 3px solid blue;
+    border-left: 3px solid blue;
+}
+
+p {
+    margin: 10px;
+}
+
+#flex {
+    display: flex;
+    border: 3px solid blue;
+    font-size: 1.5em;
+    background-color: whitesmoke;
+}
+
+#description {
+    border-right: 3px solid blue;
+    margin-right: 10px;
+    width: 70%;
+}
+
+#search {
+    text-align: center;
+}
+
+button {
+    background-image: url(../images/dogbone.png);
+    background-color: transparent;
+    /* background-position-y: -100px; */
+    /* background-size: 100px 300px; */
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 250px;
+    height: 100px;
+    max-width: 100%;
+    border: none;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-family: 'Kaushan Script', cursive;
+    font-size: 2.5em;
+}
+
+/* ---------DOCUMENTATION--------- */
+
+.info {
+    text-align: left;
+    background-color: whitesmoke;
+    border: 3px solid blue;
+    font-size: 1.5em;
+    padding: 20px;
+}
+
+.info h2 {
+    text-align: left;
+}
+
+.info ul{
+    list-style: none;
+}

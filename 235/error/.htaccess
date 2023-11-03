@@ -1,0 +1,2 @@
+ErrorDocument 404 /kft3635/235/error/error.html
+DirectoryIndex noterror.html
