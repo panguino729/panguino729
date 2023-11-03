@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<title>Crypto Prices</title>
+		<!-- development version, includes helpful console warnings -->
+		<!-- Load required Bootstrap and BootstrapVue CSS -->
+		<link type="text/css" rel="stylesheet" href="//unpkg.com/bootstrap/dist/css/bootstrap.min.css" />
+		<link type="text/css" rel="stylesheet" href="//unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.min.css" />
+		
+		<!-- Load polyfills to support older browsers -->
+		<script src="//polyfill.io/v3/polyfill.min.js?features=es2015%2CIntersectionObserver" crossorigin="anonymous"></script>
+		
+		<!-- Load Vue followed by BootstrapVue -->
+		<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+		<script src="//unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.min.js"></script>
+		
+		<!-- Load the following for BootstrapVueIcons support -->
+		<script src="//unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue-icons.min.js"></script>
+		
+		<style>
+			/* .myheader grabbed from Bootstrap's jumbotron example - https://getbootstrap.com/docs/4.0/examples/jumbotron/ */
+			.myheader{
+				background-color: #e9ecef;
+				padding: 4rem 2rem;
+				margin-bottom:2rem;
+			}
+			
+			input.form-control{
+				display: inline-block;
+				width: 20rem;
+				margin-right:1rem;
+			}
+			.search-row{
+				margin-bottom:1rem;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="app">
+			<div class="myheader">
+				<h1 class="display-5" v-html="title"></h1>
+			</div>			
+			
+			<div class="container">
+				<div class="row search-row">
+					<div class="col-md-12">
+						<input class="form-control" placeholder="This input does nothing for now">
+						<button class="btn btn-outline-success" @click="search">Search</button>
+					</div>
+				</div> <!-- end row -->
+				
+				<div class="row">
+					<table class="table table-striped table-sm">
+						<tr><th>Name</th><th>Id</th><th>Market</th><th>Last</th></tr>
+						<tr v-for="c in crypto"><td>{{c.name}}</td><td>{{c.id}}</td><td>{{c.market}}</td><td>{{c.last}}</td></tr>
+					</table>
+				</div> <!-- end row -->
+			</div> <!-- end container -->	
+		</div> <!-- end #app -->
+		
+		<script>
+			const app = new Vue({
+				el: '#app',
+				data: {
+					title: "<em>Crypto Prices</em>",
+					crypto: {"name": "...Loading...", "id": "", "market": "", "last": ""}
+				},
+				created(){
+					this.search();
+				},
+				methods:{
+					search(){
+						// if (!this.term.trim()) return;
+						fetch("https://api.coingecko.com/api/v3/indexes")
+						.then(response => {
+							if(!response.ok){
+								throw Error(`ERROR: ${response.statusText}`);
+							}
+							return response.json();
+						})
+						.then(json => {	
+							console.log(json);
+							this.crypto = json;
+						});
+					} // end search
+				} // end methods
+			});
+		</script>
+	</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<title>View a random joke</title>
+		<script>
+			window.onload = ()=>{
+				
+				let limitNum = numJokesElement.value;
+				let content = document.querySelector("#content");
+								
+				jokeBtn.onclick = (e)=>{
+					limitNum = numJokesElement.value;
+					
+					// 1. Clear UI
+					// https://stackoverflow.com/questions/3955229/remove-all-child-elements-of-a-dom-node-in-javascript
+					while (content.firstChild){
+						content.removeChild(content.lastChild);
+					}
+					
+					// 2. Create an XHR object to download the web service
+					// https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/
+					const xhr = new XMLHttpRequest();
+					const url = `get-jokes.php?limit=${limitNum}`;
+										
+					// 3. set `onerror` handler
+					xhr.onerror = (e) => console.log("error");
+					
+					// 4. set `onload` handler
+					xhr.onload = (e) => {
+						const headers = e.target.getAllResponseHeaders();
+						const jsonString = e.target.response;
+						
+						// update the UI by showing the joke
+						const json = JSON.parse(jsonString);
+						let joke;
+						let string = "";
+						
+						// looping through the jokes and appending them to content <section>
+						for (let i = 0; i < limitNum; i++){
+							joke = document.createElement("p");
+							joke.innerHTML = `<b>${json[i].q}</b> <i>${json[i].a}</i><hr>`;
+							content.appendChild(joke);
+						}
+						
+					}; // end xhr.onload
+					
+					// 5. open the connection using the HTTP GET method
+					xhr.open("GET",url);
+					
+					// 6. we could send request headers here if we wanted to
+					// https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/setRequestHeader
+					
+					// 7. finally, send the request
+					xhr.send();
+					
+				}; // end onclick
+				
+			}; // end window.onload
+			
+		</script>
+	</head>
+	<body>
+		<body>
+			<h1>View lotsa jokes</h1>
+			How many jokes? -->
+			<select id="numJokesElement">
+				<option value="2">2 Jokes!</option>
+				<option value="3">3 Jokes!</option>
+				<option value="4">4 Jokes!</option>
+				<option value="5" selected>5 Jokes!</option>
+				<option value="6">6 Jokes!</option>
+				<option value="7">7 Jokes!</option>
+				<option value="8">8 Jokes!</option>
+				<option value="9">9 Jokes!</option>
+				<option value="10">10 Jokes!</option>
+			</select>
+			<button id="jokeBtn">Show me some Jokes!</button>
+			<hr><hr>
+			<div id="content">
+				
+			</div>
+		</body>
+	</body>
+</html>

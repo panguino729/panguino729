@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>TV Search</title>
+
+	<!-- development version, includes helpful console warnings -->
+	<!-- Load required Bootstrap and BootstrapVue CSS -->
+	<link type="text/css" rel="stylesheet" href="//unpkg.com/bootstrap/dist/css/bootstrap.min.css" />
+	<link type="text/css" rel="stylesheet" href="//unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.min.css" />
+
+	<!-- Load polyfills to support older browsers -->
+	<script src="//polyfill.io/v3/polyfill.min.js?features=es2015%2CIntersectionObserver"
+		crossorigin="anonymous"></script>
+
+	<!-- Load Vue followed by BootstrapVue -->
+	<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+	<script src="//unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.min.js"></script>
+
+	<!-- Load the following for BootstrapVueIcons support -->
+	<script src="//unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue-icons.min.js"></script>
+
+	<script src="./src/loader.js" type="module"></script>
+	<link rel="stylesheet" type="text/css" href="./styles/default-styles.css">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+		rel="stylesheet">
+
+</head>
+
+<body>
+	<div id="app">
+		<div class="myheader">
+			<h1 class="display-5" v-html="title"></h1>
+			<p class="lead text-muted">This website will allow you to search for TV Shows using TV Maze's API, as
+				well
+				as show you associated videos from Dailymotion. Clicking on a video thumbnail will take you to
+				Dailymotion to watch the video.</p>
+			<p class="text-muted">
+				Disclaimer: The videos shown are from searching the corresponding TV Show name on Dailymotion. This
+				means that there is no guarantee that the TV Show video results will match the TV Show. Updated May 11, 2021
+			</p>
+		</div>
+
+		<div class="container">
+			<div class="row search-row">
+				<div class="col-md-12">
+					<input class="form-control" placeholder="Enter show name here" text="text" id="tvSearchField"
+						v-model="tvInput">
+					<button class="btn btn-outline-success" id="searchBtn" @click="search">Search</button>
+					<button class="btn btn-outline-success" id="resetBtn" @click="clearLocal">Reset Search</button>
+				</div>
+			</div> <!-- end row -->
+
+			<template v-if="shows.length != 0">
+				<div class="row" v-for="s in shows" id="content">
+					<!-- <div class="row" v-for="v in videos" id="content">
+					<show-list-row v-bind:s="s" v-bind:v="v"></show-list-row>
+				</div> -->
+					<show-list-row v-bind:s="s" v-bind:v="videos"></show-list-row>
+				</div>
+			</template>
+			<p v-else>There are no results.</p>
+		</div> <!-- end container -->
+	</div> <!-- end #app -->
+
+	<footer class="footer mt-auto py-3 bg-light text-center">
+		<div class="container">
+			<span>Katarina Tretter 2021</span>
+		</div>
+	</footer>
+</body>
+
+</html>
