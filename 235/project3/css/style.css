@@ -1,0 +1,382 @@
+* {
+    /* border: 1px solid red; */
+    /* background-color: #dcdcdd; */
+    font-family: 'Quicksand', sans-serif;
+}
+
+h1 {
+    color: #114b5f;
+}
+
+h2 {
+    color: #007ea7;
+    border-bottom: 1px solid #46494c;
+}
+
+h3 {
+    color: #1985a1;
+}
+
+body {
+    width: 85vw;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
+}
+
+footer {
+    border-top: 1px solid #464946;
+}
+
+/* ---------LINKS--------- */
+
+a:link {
+    color: #00a8e8;
+}
+
+a:visited {
+    color: #003459;
+}
+
+a:hover {
+    color: #1a936f;
+}
+
+a:active {
+    color: #1a936f;
+}
+
+/* ---------HEADER--------- */
+
+/* -----TITLE----- */
+
+h1.title {
+    text-align: center;
+    font-weight: bold;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* -----NAV----- */
+
+.menu {
+    width: 100%;
+    text-align: center;
+    font-weight: bold;
+    list-style: none;
+    margin: 0 auto;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.menu a {
+    display: block;
+    background: #dcdcdd;
+    padding: 10px;
+    text-decoration: none;
+}
+
+.menu li {
+    width: 24.87%;
+}
+
+.menu a:hover {
+    background: #114b5f;
+    color: #88d498;
+}
+
+ul.menu ul li {
+    width: 100%;
+}
+
+ul.menu ul {
+    display: none;
+}
+
+@media screen and (max-width: 700px) {
+    .menu>li {
+        flex-basis: 50%;
+    }
+}
+
+@media screen and (max-width: 300px) {
+    .menu>li {
+        flex-basis: 100%;
+    }
+}
+
+ul.menu li:hover ul {
+    display: flex;
+}
+
+.current a {
+    background: #114b5f;
+    color: #88d498;
+}
+
+/* ---------MAIN--------- */
+
+h2.info {
+    font-weight: bold;
+}
+
+div.info {
+    width: 100%;
+}
+
+.info img {
+    max-width: 100%;
+}
+
+.image img {
+    display: block;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1em;
+}
+
+@media screen and (min-width: 1000px) {
+    .image {
+        float: right;
+    }
+}
+
+#screenshots figure {
+    width: 30%;
+    text-align: center;
+    font-style: italic;
+    font-size: smaller;
+    text-indent: 0;
+    border: thin #c5c3c6 solid;
+    margin: 0.5em;
+    padding: 0.5em;
+}
+
+div.imgblock {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+#process ul {
+    list-style: none;
+}
+
+/* -----GAME----- */
+
+section#gameArea {
+    display: grid;
+    width: 960px;
+    height: 640px;
+}
+
+.game div {
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+}
+
+/* UI Styles */
+
+div#gameBlock {
+    padding: 0;
+    display: inline-block;
+    position: absolute;
+    z-index: 0;
+    grid-area: gameScreen;
+    /* underneath everything */
+}
+
+.gameButton {
+    font-size: xx-large;
+    text-align: center;
+    transition-duration: 0.4s;
+    background-color: white;
+    color: black;
+    border: 2px solid #555555;
+}
+
+.gameButton:hover {
+    background-color: #555555;
+    ;
+    color: white;
+}
+
+#gameInfo {
+    grid-area: gameInfo;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 960px auto;
+    justify-content: space-between;
+    grid-column-gap: 15px;
+    grid-template-areas: 'gameScreen gameInfo';
+}
+
+#inventory ul {
+    list-style: none;
+}
+
+/* Background Tile Styles */
+
+span.floor {
+    width: 32px;
+    height: 32px;
+    background: url(../images/terrain.png);
+    display: inline-block;
+}
+
+span.wall {
+    width: 32px;
+    height: 32px;
+    background: url(../images/terrain.png);
+    background-position: -32px -32px;
+    display: inline-block;
+}
+
+span.locked {
+    width: 32px;
+    height: 32px;
+    background: url(../images/terrain.png);
+    background-position: -64px -64px;
+    display: inline-block;
+}
+
+span.end {
+    width: 32px;
+    height: 32px;
+    background: url(../images/terrain.png);
+    background-position: -96px -96px;
+    display: inline-block;
+}
+
+span.ground {
+    width: 32px;
+    height: 32px;
+    background: url(../images/terrain.png);
+    background-position: -128px -128px;
+    display: inline-block;
+}
+
+span.cell {
+    height: 32px;
+    width: 32px;
+    border: 1px solid #333;
+    /* actual width & height is 32px because of border */
+    background-color: #ccc;
+    padding: 0;
+    margin: 0;
+    display: inline-block;
+    position: absolute;
+}
+
+span.cellSelected {
+    height: 32px;
+    width: 32px;
+    border: 0;
+    background-color: red;
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    display: inline-block;
+}
+
+/* Game Object Styles */
+
+span.gameObject {
+    height: 32px;
+    width: 32px;
+    position: absolute;
+    left: -100px;
+    top: -100px;
+    z-index: 100;
+    /* layered between background tiles and player */
+    background-color: black;
+    background: url(../images/nethack-32x32.png);
+}
+
+span.chest1 {
+    position: absolute;
+    left: -100px;
+    top: -100px;
+    background-position: -831px -450px;
+    /* 26 x 14 */
+}
+
+span.key1 {
+    position: absolute;
+    left: -100px;
+    top: -100px;
+    background-position: -1024px -448px;
+    /* 32 x 14 */
+}
+
+span.monster1 {
+    position: absolute;
+    left: -100px;
+    top: -100px;
+    z-index: 500;
+    /* layered between other game objects and player */
+    background-position: -800px -128px;
+    /* 25 x 4 */
+}
+
+span.monster2 {
+    position: absolute;
+    left: -100px;
+    top: -100px;
+    z-index: 500;
+    /* layered between other game objects and player */
+    background-position: -704px -160px;
+    /* 22 x 5 */
+}
+
+span.monster3 {
+    position: absolute;
+    left: -100px;
+    top: -100px;
+    z-index: 500;
+    /* layered between other game objects and player */
+    background-position: -320px -224px;
+    /* 10 x 7 */
+}
+
+/* player style */
+
+span.player {
+    background: url(../images/nethack-32x32.png);
+    background-position: -928px -192px;
+    /* 29 x 6 */
+    z-index: 1000;
+    /* On top of everything */
+    transition-property: all;
+    transition-duration: .25s;
+}
+
+span.ring1 {
+    position: absolute;
+    left: -100px;
+    top: -100px;
+    background-position: -320px -448px;
+    /* 10 x 14 */
+}
+
+span.treasure1 {
+    position: absolute;
+    left: -100px;
+    top: -100px;
+    background-position: -608px -448px;
+    /* 19 x 14 */
+}
+
+span.treasure2 {
+    position: absolute;
+    left: -100px;
+    top: -100px;
+    background-position: -928px -448px;
+    /* 29 x 14 */
+}
