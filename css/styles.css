@@ -1,0 +1,178 @@
+@charset "utf-8";
+
+/* ---------GLOBAL STYLES--------- */
+body {
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+}
+
+/* -------HEADER------- */
+header {
+    text-align: center;
+    display: block;
+}
+
+header .profilePicture {
+    border-radius: 50%;
+    clear: both;
+}
+
+header .profileHeader h1 {
+    font-size: 35px;
+    font-weight: 700;
+}
+
+header .profileHeader h3 {
+    font-size: 20px;
+    font-weight: 550;
+}
+
+hr {
+    height: 1px;
+}
+
+/* -------MAIN------- */
+main .svg-container {
+    /* width: 100%; */
+    width: 75%;
+    margin: 3% auto;
+    padding-top: 75%;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid black;
+}
+
+main .svg-container svg {
+    /* display: block; */
+    /* width: 100%; */
+    /* height: auto; */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+main h1 {
+    font-size: 30px;
+    font-weight: 550;
+}
+
+main h3 {
+    font-size: 25px;
+}
+
+main .madeUsing {
+    font-style: italic;
+    font-size: small;
+}
+
+main .responsibilities {
+    font-size: smaller;
+}
+
+/* -------FOOTER------- */
+
+footer {
+    color: grey;
+}
+
+/* -------BUTTONS------- */
+.custom-link-button {
+    color: #343a40;
+    border-color: #343a40;
+  }
+  .custom-link-button:hover {
+    color: white;
+    background-color: #343a40;
+    border-color: white;
+  }
+
+/* ---------SMALLER THAN MOBILE--------- */
+@media only screen and (max-width : 284px) {
+    /* -------HEADER------- */
+    header .profileHeader p {
+        text-align: justify;
+    }
+
+    /* -------MAIN------- */
+    main p {
+        text-align: justify;
+    }
+}
+
+/* ---------MOBILE DEVICES--------- */
+@media only screen and (min-width : 285px) and (max-width : 480px) {
+
+    /* -------HEADER------- */
+    header {
+        width: 100%;
+        float: none;
+    }
+
+    header .profilePicture {
+        display: block;
+    }
+
+    header .profileHeader {
+        text-align: center;
+        margin-top: 5%;
+    }
+
+    header .profileHeader p {
+        text-align: justify;
+    }
+
+    /* -------MAIN------- */
+    main p {
+        text-align: justify;
+    }
+
+    /* -------FOOTER------- */
+    footer {
+        display: block;
+        text-align: center;
+        font-size: small;
+    }
+}
+
+/* ---------TABLETS--------- */
+@media only screen and (min-width : 481px) and (max-width : 1024px) {
+
+    /* -------HEADER------- */
+    header {
+        width: 100%;
+        float: none;
+    }
+
+    header .profilePicture {
+        clear: both;
+    }
+
+    header .profileHeader {
+        text-align: left;
+    }
+
+    header .profileHeader p {
+        text-align: justify;
+    }
+    
+    /* -------FOOTER------- */
+    footer {
+        display: block;
+        text-align: center;
+        font-size: small;
+    }
+}
+
+/* ---------DESKTOP AND LAPTOP--------- */
+@media only screen and (min-width:1025px) {
+
+    /* -------FOOTER------- */
+    footer {
+        display: block;
+        text-align: left;
+        font-size: medium;
+    }
+}
