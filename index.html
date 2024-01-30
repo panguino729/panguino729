@@ -5,11 +5,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Katarina Tretter - Portfolio</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="css/custom.css">
   <!-- Regular CSS -->
   <link rel="stylesheet" href="css/styles.css">
-  <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 </head>
 
 <body>
@@ -20,8 +19,10 @@
       <div class="row pt-5 pb-3">
 
         <!-- -------PROFILE PICTURE------- -->
-        <div class="profilePicture col-sm-3">
-          <svg width="100%" height="100%" viewBox="0 0 259 259">
+        <div class="profilePicture col-8 offset-2 col-sm-5 offset-sm-0 col-md-5 col-lg-4 col-xl-3">
+          <svg width="100%" height="100%" viewBox="0 0 259 259" aria-labelledby="profile-picture-alt-text">
+
+            <title id="profile-picture-alt-text">Profile picture of Katarina Tretter</title>
 
             <defs>
               <clipPath id="circleClip">
@@ -29,17 +30,62 @@
               </clipPath>
             </defs>
 
-            <image href="images/2023 Headshot.jpg" x="-90" y="-20" width="450" height="450"
-              clip-path="url(#circleClip)" />
+            <image href="images/2023 Headshot.jpg" x="-90" y="-20" width="450" height="450" clip-path="url(#circleClip)"
+              preserveAspectRatio="xMidYMid meet" role="img" />
           </svg>
         </div>
 
         <!-- -------PROFILE TEXT------- -->
-        <div class="profileHeader col-sm-8">
+        <div class="profileHeader col-sm-7 col-md-7 col-lg-8 col-xl-9">
           <h1>KATARINA TRETTER</h1>
           <h3>GAME DESIGNER AND ENVIRONMENTAL ARTIST</h3>
           <hr>
-          <p>I'm Katarina Tretter</p>
+          <p>I'm Katarina Tretter, a game programmer passionate about designing game environments. My goal is to create
+            atmospheric and engaging game environments. While studying Game Design and Development at RIT, I furthered
+            my knowledge and programming skills to create successful games. I know C# and C++ with knowledge of HTML and
+            CSS. I also worked with Unreal Engine Blueprints. I am well organized and able to work in teams efficiently.
+          </p>
+
+          <!-- ---------SOCIAL MEDIA ICONS--------- -->
+          <div class="row justify-content-center">
+
+            <!-- -------LINKEDIN------- -->
+            <div class="col-2 px-5 gy-5">
+              <a href="https://www.linkedin.com/in/katarina-tretter-3293b7196/" target="_blank">
+                <svg viewBox="0 0 16 16" aria-labelledby="linkedIn-alt-text">
+                  <title id="linkedIn-alt-text">Icon linked to my LinkedIn profile</title>
+
+                  <image href="images/linkedin.svg" x="4" y="4" width="8" height="8" preserveAspectRatio="xMidYMid meet"
+                    role="img" />
+                </svg>
+              </a>
+            </div>
+
+            <!-- -------PORTFOLIO------- -->
+            <div class="col-2 px-5 gy-5">
+              <a href="https://katarinatretter.myportfolio.com/" target="_blank">
+                <svg viewBox="0 0 16 16" aria-labelledby="portfolio-link-alt-text">
+                  <title id="portfolio-link-alt-text">Icon linked to my portfolio</title>
+
+                  <image href="images/link.svg" x="4" y="4" width="8" height="8" preserveAspectRatio="xMidYMid meet"
+                    role="img" />
+                </svg>
+              </a>
+            </div>
+
+            <!-- -------EMAIL------- -->
+            <div class="col-2 px-5 gy-5">
+              <a href="mailto:ktretter317@gmail.com" target="_blank">
+                <svg viewBox="0 0 16 16" aria-labelledby="email-alt-text">
+                  <title id="email-alt-text">Send email to ktretter317@gmail.com</title>
+
+                  <image href="images/envelope-fill.svg" x="4" y="4" width="8" height="8"
+                    preserveAspectRatio="xMidYMid meet" role="img" />
+                </svg>
+              </a>
+            </div>
+
+          </div>
         </div>
 
       </div>
@@ -53,7 +99,7 @@
       <!-- -------PROJECTS------- -->
       <!-- -----TITLE----- -->
       <div class="row" id="projects">
-        <h1>Projects</h1>
+        <h1>GitHub Projects</h1>
       </div>
 
       <!-- -----PROJECT NAMES----- -->
@@ -69,7 +115,24 @@
             and turn your assignment in on time.</p>
           <p class="responsibilities">Responsibilities: Created color palette for puzzles, created beginning lab art,
             designed some windows, created layouts for the second half of the game</p>
-          <a href="project_link">View Project</a>
+          <div class="svg-container">
+            <svg viewBox="0 0 100 100" aria-labelledby="colorIT-alt-text">
+              <title id="colorIT-alt-text">Image of computer lab from Color-IT</title>
+
+              <defs>
+                <clipPath id="rectClip">
+                  <rect x="0" y="0" width="100" height="100" />
+                </clipPath>
+              </defs>
+
+              <image href="images/Lab1-01.png" x="0" y="0" width="100" height="100" clip-path="url(#rectClip)"
+                preserveAspectRatio="xMidYMid slice" role="img" />
+            </svg>
+          </div>
+          <div class="text-center">
+            <a href="/601/ColorIT/index.html" class="btn btn-outline-secondary custom-link-button" role="button">View
+              Project</a>
+          </div>
         </div>
 
         <!-- The Trial - Choices -->
@@ -82,7 +145,24 @@
             history of Stemvia. By gathering all of the lost information, you will have to make a choice at the end of
             the maze. You will have to choose between leaving and joining society, or staying and joining the
             Resistance. Each decision will have consequences, so you must choose carefully.</p>
-          <a href="529/project1/index.html">View Project</a>
+          <div class="svg-container">
+            <svg viewBox="0 0 100 100" aria-labelledby="stemvia-alt-text">
+              <title id="stemvia-alt-text">Map of Stemvia</title>
+
+              <defs>
+                <clipPath id="rectClip">
+                  <rect x="0" y="0" width="100" height="100" />
+                </clipPath>
+              </defs>
+
+              <image href="images/Map of Stemvia.png" x="0" y="0" width="100%" height="100%" clip-path="url(#rectClip)"
+                preserveAspectRatio="xMidYMid slice" role="img" />
+            </svg>
+          </div>
+          <div class="text-center">
+            <a href="529/project1/index.html" class="btn btn-outline-secondary custom-link-button" role="button">View
+              Project</a>
+          </div>
         </div>
 
       </div>
