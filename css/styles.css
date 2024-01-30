@@ -1,0 +1,135 @@
+@charset "utf-8";
+
+/* ---------GLOBAL STYLES--------- */
+body {
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+}
+
+/* -------HEADER------- */
+header {
+    text-align: center;
+    display: block;
+}
+
+header .profilePicture {
+    border-radius: 50%;
+    clear: both;
+}
+
+header .profileHeader h1 {
+    font-size: 35px;
+    font-weight: 700;
+    line-height: 24px;
+}
+
+header .profileHeader h3 {
+    font-size: 20px;
+    font-weight: 550;
+}
+
+hr {
+    height: 1px;
+}
+
+/* -------MAIN------- */
+main h1 {
+    font-size: 30px;
+    font-weight: 550;
+}
+
+main h3 {
+    font-size: 25px;
+}
+
+main .madeUsing {
+    font-style: italic;
+    font-size: small;
+}
+
+main .responsibilities {
+    font-size: smaller;
+}
+
+/* -------FOOTER------- */
+
+footer {
+    color: grey;
+}
+
+/* ---------MOBILE DEVICES--------- */
+@media only screen and (min-width : 285px) and (max-width : 480px) {
+
+    /* -------HEADER------- */
+    header {
+        width: 100%;
+        float: none;
+    }
+
+    header .profilePicture {
+        display: block;
+    }
+
+    header .profileHeader {
+        text-align: center;
+        margin-top: 10%;
+    }
+
+    header .profileHeader p {
+        text-align: justify;
+    }
+
+    /* -------MAIN------- */
+    main p {
+        text-align: justify;
+    }
+
+    /* -------FOOTER------- */
+    footer {
+        display: block;
+        text-align: center;
+        font-size: small;
+    }
+}
+
+/* ---------TABLETS--------- */
+@media only screen and (min-width : 481px) and (max-width : 1024px) {
+
+    /* -------HEADER------- */
+    header {
+        width: 100%;
+        float: none;
+    }
+
+    header .profilePicture {
+        clear: both;
+    }
+
+    header .profileHeader {
+        text-align: left;
+        margin-top: 7%;
+    }
+
+    header .profileHeader p {
+        text-align: justify;
+    }
+    
+    /* -------FOOTER------- */
+    footer {
+        display: block;
+        text-align: center;
+        font-size: small;
+    }
+}
+
+/* ---------DESKTOP AND LAPTOP--------- */
+@media only screen and (min-width:1025px) {
+
+    /* -------FOOTER------- */
+    footer {
+        display: block;
+        text-align: left;
+        font-size: medium;
+    }
+}
