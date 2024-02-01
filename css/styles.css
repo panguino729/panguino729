@@ -28,6 +28,10 @@ header .profileHeader h3 {
     font-weight: 550;
 }
 
+header .iconLink svg {
+    display: flex;
+}
+
 hr {
     height: 1px;
 }
@@ -82,15 +86,17 @@ footer {
 .custom-link-button {
     color: #343a40;
     border-color: #343a40;
-  }
-  .custom-link-button:hover {
+}
+
+.custom-link-button:hover {
     color: white;
     background-color: #343a40;
     border-color: white;
-  }
+}
 
 /* ---------SMALLER THAN MOBILE--------- */
 @media only screen and (max-width : 284px) {
+
     /* -------HEADER------- */
     header .profileHeader p {
         text-align: justify;
@@ -157,7 +163,7 @@ footer {
     header .profileHeader p {
         text-align: justify;
     }
-    
+
     /* -------FOOTER------- */
     footer {
         display: block;
@@ -174,5 +180,69 @@ footer {
         display: block;
         text-align: left;
         font-size: medium;
+    }
+}
+
+/* ---------ICON MEDIA SIZES--------- */
+@media only screen and (max-width: 284px) {
+
+    /* -------HEADER------- */
+    header .iconLink svg {
+        width: 24px;
+        height: auto;
+    }
+}
+
+@media only screen and (min-width: 285px) and (max-width:480px) {
+
+    /* -------HEADER------- */
+    header .iconLink svg {
+        width: 34px;
+        height: auto;
+    }
+}
+
+@media only screen and (min-width: 481px) and (max-width:600px) {
+
+    /* -------HEADER------- */
+    header .iconLink svg {
+        width: 25px;
+        height: auto;
+    }
+}
+
+@media only screen and (min-width: 601px) and (max-width:800px) {
+
+    /* -------HEADER------- */
+    header .iconLink svg {
+        width: 28px;
+        height: auto;
+    }
+}
+
+@media only screen and (min-width: 801px) and (max-width:1025px) {
+
+    /* -------HEADER------- */
+    header .iconLink svg {
+        width: 50%;
+        height: auto;
+    }
+}
+
+@media only screen and (min-width:1026px) and (max-width:1280px) {
+
+    /* -------HEADER------- */
+    header .iconLink svg {
+        width: 40%;
+        height: auto;
+    }
+}
+
+@media only screen and (min-width:1281px) {
+
+    /* -------HEADER------- */
+    header .iconLink svg {
+        width: 34%;
+        height: auto;
     }
 }
