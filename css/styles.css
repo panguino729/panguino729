@@ -58,6 +58,11 @@ main .svg-container svg {
     height: 100%;
 }
 
+/* -----CARDS----- */
+main .card-body {
+    text-align: center;
+}
+
 main h1 {
     font-size: 30px;
     font-weight: 550;
